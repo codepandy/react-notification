@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "ReactNotification",
   "version": "1.0.0",
   "description": "react的一个通知提醒组件",
   "main": "./build/bundle.js",
