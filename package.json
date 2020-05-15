@@ -48,13 +48,13 @@
   "author": "wenmu",
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/codepandy/react-notification.git"
   },
   "license": "ISC",
   "bugs": {
-    "url": "/issues"
+    "url": "https://github.com/codepandy/react-notification/issues"
   },
-  "homepage": "#readme",
+  "homepage": "https://github.com/codepandy/react-notification#readme",
   "browserslist": [
     "defaults",
     "ie > 9",
