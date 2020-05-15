@@ -1,0 +1,47 @@
+.container {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  min-width: 280px;
+  min-height: 108px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(220, 222, 227, 1);
+  border-radius: 7px;
+  animation: noticeSlider 500ms ease 1;
+  -webkit-animation: noticeSlider 500ms ease 1;
+}
+@keyframes noticeSlider {
+  from {
+    right: -280px;
+  }
+  to {
+    right: 10;
+  }
+}
+
+@-webkit-keyframes noticeSlider /*Safari and Chrome*/ {
+  from {
+    right: -280px;
+  }
+  to {
+    right: 10;
+  }
+}
+@-moz-keyframes noticeSlider /* Firefox */ {
+  from {
+    right: -280px;
+  }
+  to {
+    right: 10;
+  }
+}
+
+@-o-keyframes noticeSlider /* Opera */ {
+  from {
+    right: -280px;
+  }
+  to {
+    right: 10;
+  }
+}

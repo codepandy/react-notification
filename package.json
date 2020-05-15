@@ -1,0 +1,63 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "react的一个通知提醒组件",
+  "main": "./build/bundle.js",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.pro.js",
+    "prepub": "npm run build",
+    "pub": "npm publish",
+    "version": "npm version patch"
+  },
+  "dependencies": {
+    "browserslist": "^4.12.0",
+    "classnames": "^2.2.6",
+    "css-loader": "^3.4.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "style-loader": "^1.1.2",
+    "webpack-merge": "^4.2.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "autoprefixer": "^9.7.6",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "postcss-loader": "^3.0.0",
+    "url-loader": "^4.0.0",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "keywords": [
+    "react-notification",
+    "notification",
+    "react"
+  ],
+  "author": "wenmu",
+  "repository": {
+    "type": "git",
+    "url": "git+"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "/issues"
+  },
+  "homepage": "#readme",
+  "browserslist": [
+    "defaults",
+    "ie > 9",
+    "maintained node versions"
+  ]
+}
