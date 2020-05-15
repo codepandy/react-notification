@@ -5,7 +5,7 @@
 ## 安装
 
 ```bash
-npm i ReactNotification --save
+npm i @wenmu/react-notification --save
 ```
 
 ## 使用
