@@ -27,7 +27,10 @@ export default class ReactNotification extends PureComponent {
     const { style, className } = this.props;
 
     return (
-      <div className={`${styles.container} ${className}`} style={{ ...style, ...display }}>
+      <div
+        className={`${styles.notificationContainer_afdf34985983} ${className || ""}`}
+        style={{ ...style, ...display }}
+      >
         {render}
       </div>
     );

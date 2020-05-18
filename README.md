@@ -74,14 +74,37 @@ props 详情
 
 消息组件的引用
 
-#### notification.hidden
+#### notification.hidden()
 
 隐藏提醒元素，建议使用这个，使用 destroy 会每次销毁和重建元素，造成资源浪费。
 
-#### notification.show
+#### notification.show()
 
 显示通知，内容不发生变化，如果需要显示一个新的通知，需要使用 notice。
 
-#### notification.destroy
+#### notification.destroy()
 
 销毁提醒元素
+
+## 使用技巧
+
+该组件提供了灵活的配置，可扩展性较强，满足各种需求；
+
+### 初始化不显示
+
+如果初始化时，不想显示提醒框，可以通过设置 style 的来实现
+
+```js
+ReactNotification.newInstance(
+  { style: { display: "none" }, duration: 3000, autoClose: false },
+  (notification) => {
+    notificationObj = notification;
+  },
+);
+```
+
+当使用 notice()方法添加消息时，会自动显示提醒框。不需要调用 show()方法。
+
+### 自定义提醒框的位置
+
+使用 style 也可以设置弹框的位置;
