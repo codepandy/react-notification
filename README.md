@@ -1,6 +1,6 @@
 # react-notification
 
-开发一个通知提醒的组件。为了方便扩展，该组件只提供一个空的提醒框，内容完全自定义。避免 UI 作妖！
+开发一个通知提醒的组件。为了方便扩展，该组件只提供一个空的提醒框，内容完全自定义。避免 ！
 
 ## 安装
 
@@ -8,24 +8,42 @@
 npm i @wenmu/react-notification --save
 ```
 
+## 效果图
+
+![WX20200518-132425.png](https://i.loli.net/2020/05/18/3tUHoIp27Ny4OEd.png)
+
+只是一个提示框，内容自定义。
+
 ## 使用
 
 ```js
-import ReactNotification from "ReactNotification";
+import ReactNotification from "@wenmu/react-notification";
 
-function showNotice() {
-  // 清除原来的提示元素
-  notificationObj && notificationObj.destroy();
+const notificationObj;
+function initNotification() {
   ReactNotification.newInstance(
     { style: { color: "red" }, duration: 3000, autoClose: false },
     (notification) => {
       notificationObj = notification;
-      notification.notice({
-        render: <div style={{ width: "300px", height: "200px" }}>hello</div>,
-      });
+      // 如果初始化时就需要显示内容，可以在这调用notice
+      // notification.notice({
+      //   render: <div style={{ width: "300px", height: "200px" }}>hello</div>,
+      // });
     },
   );
 }
+
+// 创建一个通知
+function createNotice(){
+    notification.notice({
+        render: <div style={{ width: "300px", height: "200px" }}>hello</div>,
+      });
+}
+
+function showNotification(){
+  notificationObj
+}
+
 
 <button onClick={showNotice}>显示通知</button>;
 ```
@@ -45,6 +63,8 @@ props 详情
 
 #### notification.notice(props)
 
+创建一个通知。
+
 props 详情
 |属性名|类型|含义|
 |---|---|---|
@@ -53,6 +73,14 @@ props 详情
 #### notification.component
 
 消息组件的引用
+
+#### notification.hidden
+
+隐藏提醒元素，建议使用这个，使用 destroy 会每次销毁和重建元素，造成资源浪费。
+
+#### notification.show
+
+显示通知，内容不发生变化，如果需要显示一个新的通知，需要使用 notice。
 
 #### notification.destroy
 

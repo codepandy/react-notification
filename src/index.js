@@ -8,18 +8,26 @@ export default class ReactNotification extends PureComponent {
     super(props);
     this.state = {
       render: "",
+      display: {},
     };
   }
   add = (props) => {
-    this.setState({ ...props });
+    this.setState({ display: { display: "block" }, ...props });
+  };
+  hidden = () => {
+    this.setState({ display: { display: "none" } });
+  };
+
+  show = () => {
+    this.setState({ display: { display: "block" } });
   };
 
   render() {
-    const { render } = this.state;
+    const { render, display } = this.state;
     const { style, className } = this.props;
 
     return (
-      <div className={`${styles.container} ${className}`} style={{ ...style }}>
+      <div className={`${styles.container} ${className}`} style={{ ...style, ...display }}>
         {render}
       </div>
     );
@@ -42,15 +50,7 @@ ReactNotification.newInstance = function newNotificationInstance(properties, cal
   } else {
     document.body.appendChild(notificationDiv);
   }
-  // 销毁
-  function destroy() {
-    ReactDOM.unmountComponentAtNode(notificationDiv);
-    if (notificationDiv.parentNode) {
-      notificationDiv.parentNode.removeChild(notificationDiv);
-    }
-    if (window.nocificationTimeout_a2312adssdfsiret)
-      clearTimeout(window.nocificationTimeout_a2312adssdfsiret);
-  }
+
   let called = false;
   function ref(notification) {
     if (called) {
@@ -63,12 +63,23 @@ ReactNotification.newInstance = function newNotificationInstance(properties, cal
         notification.add(noticeProps);
         if (autoClose) {
           window.nocificationTimeout_a2312adssdfsiret = setTimeout(() => {
-            destroy();
+            notification.hidden();
           }, duration);
         }
       },
       component: notification,
-      destroy: destroy,
+      destroy() {
+        ReactDOM.unmountComponentAtNode(notificationDiv);
+        if (notificationDiv.parentNode) {
+          notificationDiv.parentNode.removeChild(notificationDiv);
+        }
+      },
+      hidden() {
+        notification.hidden();
+      },
+      show() {
+        notification.show();
+      },
     });
   }
   ReactDOM.render(<ReactNotification {...props} ref={ref} />, notificationDiv);

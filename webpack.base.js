@@ -28,10 +28,7 @@ const config = {
           {
             loader: "postcss-loader",
           },
-          
           { loader: "less-loader" },
-          
-          
         ],
       },
     ],
