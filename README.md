@@ -10,7 +10,7 @@ npm i @wenmu/react-notification --save
 
 ## 效果图
 
-![WX20200518-132425.png](https://i.loli.net/2020/05/18/3tUHoIp27Ny4OEd.png)
+![效果图](https://i.loli.net/2020/05/18/3tUHoIp27Ny4OEd.png)
 
 只是一个提示框，内容自定义。
 
