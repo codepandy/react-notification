@@ -41,11 +41,11 @@ function createNotice(){
 }
 
 function showNotification(){
-  notificationObj
+  notificationObj.show();
 }
 
 
-<button onClick={showNotice}>显示通知</button>;
+<button onClick={initNotification}>创建通知</button>;
 ```
 
 ## API
