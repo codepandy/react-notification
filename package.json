@@ -1,6 +1,6 @@
 {
   "name": "@wenmu/react-notification",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "react的一个通知提醒组件",
   "main": "./build/bundle.js",
   "files": [

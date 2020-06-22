@@ -49,7 +49,9 @@ ReactNotification.newInstance = function newNotificationInstance(properties, cal
   const notificationDiv = document.createElement("div");
   if (getContainer) {
     const root = getContainer();
-    root.appendChild(notificationDiv);
+    if (root.appendChild) {
+      root.appendChild(notificationDiv);
+    }
   } else {
     document.body.appendChild(notificationDiv);
   }
@@ -59,14 +61,21 @@ ReactNotification.newInstance = function newNotificationInstance(properties, cal
     if (called) {
       return;
     }
+    const clearTimer = () => {
+      if (window.nocificationTimeout_a2312adssdfsiret) {
+        clearTimeout(window.nocificationTimeout_a2312adssdfsiret);
+        window.nocificationTimeout_a2312adssdfsiret = null;
+      }
+    };
     called = true;
     callback({
       notice(noticeProps) {
-        clearTimeout(window.nocificationTimeout_a2312adssdfsiret);
+        clearTimer();
         notification.add(noticeProps);
         if (autoClose) {
           window.nocificationTimeout_a2312adssdfsiret = setTimeout(() => {
             notification.hidden();
+            clearTimer();
           }, duration);
         }
       },

@@ -55,7 +55,7 @@ function showNotification(){
 props 详情
 |属性名|含义|默认值|
 |---|---|---|
-|getContainer|指定通知提醒的容器，一个 html 元素|空|
+|getContainer|指定通知提醒的容器的方法，返回一个 html 元素|空|
 |autoClose|是否自动关闭|true|
 |duration|自动关闭的时间间隔|4500(毫秒)|
 |style|设置提醒框容器的内嵌样式，设置提醒框的位置使用这个很方便|空|
